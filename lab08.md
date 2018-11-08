@@ -34,4 +34,4 @@ Collaborator➡Events：
 血量减少到0	➡游戏通关  
 
 ## 游戏展示
-![image](http://thyrsi.com/t6/414/1541637545x-1404817712.gif)
+![image](http://thyrsi.com/t6/414/1541637545x-1404817712.gif)<br>
