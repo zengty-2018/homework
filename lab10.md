@@ -1,1 +1,1 @@
-pdf:[链接](https://github.com/zengty-2018/homework/blob/gh-pages/python%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.pdf)
+pdf:[python实验报告](https://github.com/zengty-2018/homework/blob/gh-pages/python%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.pdf)
