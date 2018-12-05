@@ -15,6 +15,7 @@ int position[4][2];
 int head[2];
 int direction;
 
+//各种要使用的函数 
 void before_game();
 void play_game();
 void game_over();
@@ -25,6 +26,8 @@ void output();
 void getDirection();
 void snakeMove();
 void isGameOver();
+
+//主函数 
 int main(){
 	before_game();
 	play_game();
@@ -33,12 +36,14 @@ int main(){
 	return 0;
 }
 
+//游戏开始前的准备 
 void before_game(){
 	starting_interface();
 	map_making();
 	snake_making();
 }
-	
+
+//游戏中的操作 
 void play_game(){
 	output();
 	
@@ -53,12 +58,14 @@ void play_game(){
 		output();
 	}
 }
-		
+
+//游戏结束之后的操作 
 void game_over(){
 	printf("\n\n\n\n");
 	printf("                                           游戏结束\n------------------------------------------------------------------------------------------------------------\n");
 }
 
+//开始界面 
 void starting_interface(){
 	char c;
 	printf("                                            贪吃蛇            \n\n\n\n\n\n");
@@ -69,6 +76,7 @@ void starting_interface(){
 		system("CLS"); 
 }
 
+//地图初始化 
 void map_making(){
 	int i; 
 	for(i = 0; i < WALL_LENTH; i++){
@@ -79,6 +87,7 @@ void map_making(){
 	}
 }
 
+//蛇初始化 
 void snake_making(){
 	int i,x=0;
 	for(i = 1; i < snake_len; i++){
@@ -92,6 +101,7 @@ void snake_making(){
 	head[1] = i;
 }
 
+//输出地图 
 void output(){
 	int i,j;
 		for(i = 0; i < WALL_LENTH; i++){
@@ -102,22 +112,24 @@ void output(){
 	}
 }
 
+//得到前进的方向 
 void getDirection(){
 	direction = getch();
 }
 
+//蛇的移动 
 void snakeMove(){
 	int i;
 	
 	switch (direction) {
-		case 97 : {map[position[0][0]][position[0][1]] = AREA;
+		case 97 : {map[position[0][0]][position[0][1]] = AREA;   //把尾巴最后一个位置改成空格 
 					for(i = 0; i < snake_len-2; i++){
 						position[i][0] = position[i+1][0];
-						position[i][1] = position[i+1][1];
+						position[i][1] = position[i+1][1];      //每个尾巴向前移动一个 
 					}
 					position[i][0] = head[0];
 					position[i][1] = head[1];
-					head[1]--;
+					head[1]--;                                  //头的移动 
 				};
 				break;
 		case 119  : {map[position[0][0]][position[0][1]] = AREA;
@@ -153,21 +165,22 @@ void snakeMove(){
 	}
 	
 	for(i = 0; i < snake_len-1; i++){
-		map[position[i][0]][position[i][1]] = SNAKE_BODY;
+		map[position[i][0]][position[i][1]] = SNAKE_BODY;        //把新的蛇身体对应位置的字符改成SNAKE_BODY 
 	}
-	map[head[0]][head[1]] = SNAKE_HEAD;
+	map[head[0]][head[1]] = SNAKE_HEAD;                          //把新的蛇头对应位置的字符改成SNAKE_HEAD 
 }
 
+//判断是否结束游戏 
 void isGameOver(){
 	int i;
 	
-	if(head[0] == 0 || head[0] == 11)
+	if(head[0] == 0 || head[0] == 11)    //碰到上下界结束 
 		flag = 0;
-	if(head[1] == 0 || head[1] == 11)
+	if(head[1] == 0 || head[1] == 11)    //碰到左右界结束 
 		flag = 0;
 	
 	for(i = 0; i < snake_len-1; i++){
-		if(position[i][0] == head[0] && position[i][1] == head[1])
+		if(position[i][0] == head[0] && position[i][1] == head[1])    //头碰到身体结束 
 			flag = 0;
 	}
 }
