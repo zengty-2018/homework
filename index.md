@@ -35,7 +35,6 @@
 17. [17-贪吃蛇的设计及算法介绍](lab17)
 
 
-
 ## Markdown 语法演示
 
 ![](images/exclamation.png) 语法 [demo 文档](demo)， [source](https://github.com/sysu-swi/homework/blob/gh-pages/demo.md)
