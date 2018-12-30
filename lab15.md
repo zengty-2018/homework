@@ -1,6 +1,5 @@
-# Ubuntu的使用
-#### VBox安装完成：  
-![image](http://thyrsi.com/t6/631/1544677918x2728309621.jpg)  
+#智能蛇实验报告
 
-#### 打开Unbuntu：  
-![image](http://thyrsi.com/t6/631/1544677946x2728309621.jpg)  
+[inteligent_snake.c](智能蛇.c)
+
+开始游戏后，任意敲击键盘上的键，蛇就会自动寻找方向前进。
